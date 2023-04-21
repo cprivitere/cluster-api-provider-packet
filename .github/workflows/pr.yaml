@@ -83,6 +83,8 @@ jobs:
     - name: Docker meta
       id: docker_meta
       uses: docker/metadata-action@v4
+      env:
+        DOCKER_METADATA_PR_HEAD_SHA: true
       with:
         images: |
           ${{ env.QUAY_REGISTRY }}/${{ env.IMAGE_NAME }}
